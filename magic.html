@@ -39,9 +39,20 @@
         </header>
         <!-- Main Content -->
         <main id="main">
-            <section id="seciton-Hero">
-                <h2>Hampstar Studios</h2>
-                <p>All about this game developer</p>
+            <section id="seciton-about">
+                <h2>Magic Number</h2>
+                <p>The magic number is somewhere between 1 and 100.<br/> Can you find out what it is?</p>
+            </section>
+            <section id="section-input">
+                <h3>Pick a Number</h3>
+                <label for="input-number" class="form-label">Number:</label>
+                <input class="magicnumber-input" type="number" id="input-number" name="input-number" required min="1" step="1" maxlength="3" max="100">
+                <button class="btn" id="button-submit">Submit</button>
+            <section id="seciton-magic-numbers">
+                <h3>Statistics</h3>
+                <p><strong>Games Played:</strong> <span id="magic-gamecount"></span></p>
+                <p><strong>Fastest Game:</strong> <span id="magic-min"></span></p>
+                <p><strong>Longest Game:</strong> <span id="magic-max"></span></p>
             </section>
         </main>
 
@@ -55,9 +66,9 @@
     </div><!-- /.container -->
 
     <!-- ============================================================
-         SCRIPTS  (placed before </body> for performance)
+         SCRIPTS 
          ============================================================ -->
-    <script type="text/javascript" async src=""></script>
+    <script type="text/javascript" async src="js/magicNumber.js"></script>
 </body>
 
 </html>

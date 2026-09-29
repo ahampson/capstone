@@ -124,6 +124,31 @@ section h3 {
     background-size: cover;
 }
 
+/* ----- Magic numbers formatting ----- */
+
+.magicnumber-input {
+    font-size: 10rem;
+    background-color: #333333;
+    color: #e0e0e0;
+    border: 1px solid #555555;
+    border-radius: 4px;
+    padding: 0.5rem;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* For Chrome/Edge and Safari */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    appearance: none;
+}
+
+/* For Firefox */
+input[type="number"] {
+    appearance: textfield;
+}
+
 /* ----- -- ----- */
 
 .grid{

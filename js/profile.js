@@ -44,4 +44,11 @@ if(!(heroName )){
     document.getElementById("hero-ability").innerText = ability;
     document.getElementById("hero-bio").innerText = profiles[ability][personality];
     document.getElementById("hero-personality").innerText = personality;
+
+    document.getElementById("button-magic").addEventListener("click", function(){
+        window.location.href = "magic.html";
+    });
+    document.getElementById("button-vault").addEventListener("click", function(){
+        window.location.href = "vault.html";
+    });
 }
