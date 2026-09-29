@@ -1,0 +1,217 @@
+ /* ----- Reset / Base ----- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    padding: 2rem;
+    background-image: url('/img/Verdant King.png');
+    background-size: cover;
+}
+
+/* ----- Layout ----- */
+.container {
+    margin: 0 auto;
+}
+
+/* ----- Header ----- */
+header {
+    border-bottom: 2px solid #00aa00;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    background-color: #271F11;
+}
+
+header h1 {
+    color: #00cc00;
+    font-size: 1.8rem;
+}
+
+header p {
+    color: #aaaaaa;
+    font-size: 0.9rem;
+    align-items: center;
+}
+
+p {
+    margin-top: 2vh;
+    margin-bottom: 3vh;
+}
+
+nav {
+    display: block;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+nav a.active {
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+/* ----- Main Content ----- */
+main {
+    margin-bottom: 2rem;
+
+}
+
+input.text {
+    margin: 0 10vw 0 5vw;
+    text-transform: capitalize;
+}
+
+section {
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    width: 100%;
+    background-color:rgba(102,102,102,0.4);
+}
+
+section p{
+    opacity: 1;
+}
+
+section h2 {
+    color: #00cc00;
+    margin-bottom: 0.5rem;
+}
+
+section h3 {
+    color: #00cc00;
+    margin-bottom: 0.3rem;
+}
+
+/* ----- Ability Set and Colour  ----- */
+.ability {
+    height: 10vw; 
+    width: 10vw;
+}
+
+.profile-ability {
+    height: 50vw; 
+    width: 50vw;
+}
+
+.fire {
+    background-image:url('/img/Fire.png');
+    background-size: cover;
+}
+
+.water {
+    background-image:url('/img/Water.png');
+    background-size: cover;
+}
+
+.lightning{
+    background-image:url('/img/Lightning.png');
+    background-size: cover;
+}
+
+.nature{
+    background-image:url('/img/Nature.png');
+    background-size: cover;
+}
+
+/* ----- -- ----- */
+
+.grid{
+    display: grid;
+}
+
+.flex {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.text-centre{
+    text-align: center;
+    justify-self: center;
+}
+
+.full-width{
+    display: inline-block;
+    width: 100%;
+}
+
+/* ----- Images ----- */
+.img-job{
+    width: 40vw;
+    height: 40vw;
+    border-radius: 5%;
+    background-color: #666666;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* ----- Forms ----- */
+.form-input {
+    display: grid;
+    grid-template-columns: 10vw 80vw;
+    margin: 1vw 5vh 1vw 5vh;
+}
+
+.form-label {
+    text-align: end;
+    padding-right: 1vw;
+    margin-right: 1vw;
+}
+
+/* ----- Buttons ----- */
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    background-color: #00aa00;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+    width: 100%; 
+    margin-top: 5vh;
+}
+
+.btn:hover {
+    background-color: #008800;
+}
+
+/* ----- Output / Status ----- */
+#output {
+    background-color: #0d0d0d;
+    border: 1px solid #333333;
+    border-radius: 4px;
+    padding: 1rem;
+    font-family: monospace;
+    white-space: pre-wrap;
+    min-height: 4rem;
+}
+
+/* ----- Footer ----- */
+footer {
+    border-top: 2px solid #333333;
+    padding-top: 1rem;
+    color:#aaaaaa;
+    font-size: 0.8rem;
+    text-align: center;
+}
+@media all and (min-width: 600px){}
+
+@media all and (min-width: 800px){}
+
+@media all and (min-width: 1280px) {}

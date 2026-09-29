@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--
+    HomePage of the Portfolio Project
+-->
+<html lang="en">
+
+<head>
+    <!-- ============================================================
+         META / DOCUMENT HEAD
+         ============================================================ -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="HomePage for the Portfolio Project" />
+    <meta name="author" content="Hampstar Studios" />
+
+    <title>The Fall of the Verdant King</title>
+
+    <!-- ============================================================
+         STYLES
+         ============================================================ -->
+    <link rel="stylesheet" href="/css/style.css"></link>
+</head>
+
+<body>
+    <!-- ============================================================
+         PAGE STRUCTURE
+         ============================================================ -->
+    <div class="container">
+
+        <!-- Header -->
+        <header>
+            <h1>The Fall of the Verdant King</h1>
+        </header>
+
+        <!-- Main Content -->
+        <main id="main">
+            <section id="section-about">
+                <p>The world once celebrated a hero known as the Verdant King, a guardian blessed with the power of nature. He healed the land, protected kingdoms, and brought life wherever he walked. But when a great plague swept across the world, he failed to save those he loved most.</p>
+                <p>Consumed by grief, the Verdant King turned to an ancient relic hidden beneath the World Tree. The relic promised a world without suffering, death, or loss. Desperate to undo his tragedy, he embraced its power.</p>
+                <p>Instead, it corrupted him.</p>
+                <p>The hero became a tyrant.</p>
+                <p>Now twisted forests consume entire kingdoms, monstrous vines roam the land, and the Verdant King's dark magic drains life from the world itself. If left unchecked, he will complete a ritual that will turn all living things into part of his endless forest.</p>
+                <p>Yet a prophecy speaks of one final hero.</p>
+                <p>That hero is you.</p>
+            </section>
+            <section id="section-name" class="full-width">
+                <h2>Create New Hero</h2>
+                <div class="form-input">
+                    <label for="name" class="form-label">Name:</label>
+                    <input class="text" type="text" id="name" name="name" required minlength="4" maxlength="48" size="10">
+                </div>
+            </section>
+            <section id="section-job" class="col-2">
+                <h3>Hero Ability</h3>
+                <form name="form-ability" action="/profile.html" method="get" class="flex">
+                    <div id="ability-fire" class="text-centre" tabindex="1">
+                        <div class="ability fire"></div>
+                        <input type="radio" id="fire" name="ability" value="Fire">
+                        <label for="fire">Fire</label>
+                    </div>
+                    <div id="ability-water" class="text-centre" tabindex="1">
+                        <div class="ability water"></div>
+                        <input type="radio" id="water" name="ability" value="Water">
+                        <label for="water">Water</label>
+                    </div>
+                    <div id="ability-lightning" class="text-centre" tabindex="1">
+                        <div class="ability lightning"></div>
+                        <input type="radio" id="lightning" name="ability" value="Lightning">
+                        <label for="lightning">Lightning</label>
+                    </div>
+                    <div id="ability-nature" class="text-centre" tabindex="1">
+                        <div class="ability nature"></div>
+                        <input type="radio" id="nature" name="ability" value="Nature">
+                        <label for="nature">Nature</label>
+                    </div>                    
+                </form>
+                <button type="submit" class="btn" style="width: 100%; margin-top: 5vh;" id="btn-create" type="button">Create Hero</button>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="flex" id="footer">
+            <a href="/privacy.html">Hampstar Studios</a>
+            <time datetime="2026-09-22">2026-09-22</time>
+            <a href="/index.html">GitHub Source</a>
+        </footer>
+
+    </div><!-- /.container -->
+
+    <!-- ============================================================
+         SCRIPTS  (placed before </body> for performance)
+         ============================================================ -->
+    <script type="text/javascript" async src="/js/homepage.js"></script>
+</body>
+
+</html>
