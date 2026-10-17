@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+    HomePage of the Portfolio Project
+-->
+<html lang="en">
+
+<head>
+    <!-- ============================================================
+         META / DOCUMENT HEAD
+         ============================================================ -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Inofmration about the hero profile" />
+    <meta name="author" content="Hampstar Studios" />
+
+    <title>Hero Profile</title>
+
+    <!-- ============================================================
+         STYLES
+         ============================================================ -->
+    <link rel="stylesheet" href="/css/style.css"></link>
+</head>
+
+<body>
+    <!-- ============================================================
+         PAGE STRUCTURE
+         ============================================================ -->
+    <div class="container">
+
+        <!-- Header -->
+        <header>
+            <h1>The Fall of the Verdant King</h1>
+            <nav>
+                <a href="/">Create New</a>
+                <a href="/profile.html#seciton-Hero" class="active">Hero Profile</a>
+                <a href="/magic.html">Magic Numbers</a>
+                <a href="/vault.html">Bank Vault</a>
+            </nav>
+        </header>
+        <!-- Main Content -->
+        <main id="main">
+            <section id="seciton-Hero">
+                <h2><span id="hero-name"></span>'s Profile</h2>
+                <div class="flex">
+                    <div id="ability" class="profile-ability"></div>
+                    <div>
+                        <h3>Ability:</h3>
+                        <p>&emsp;<span id="hero-ability"></span></p>
+                        <h3>Personality:</h3>
+                        <p>&emsp;<span id="hero-personality"></span></p>
+                        <h3>Bio:</h3>
+                        <p>&emsp;<span id="hero-bio"></span></p>
+                    </div>
+                </div>
+            </section>
+            <section id="seciton-magic-numbers">
+                <h3>Magic Numbers</h3>
+                <p><strong>Games Played:</strong> <span id="magic-gamecount"></span></p>
+                <p><strong>Fastest Game:</strong> <span id="magic-min"></span></p>
+                <p><strong>Longest Game:</strong> <span id="magic-max"></span></p>
+                <button id="button-magic" class="btn">Visit Magic Numbers Game</button>
+            </section>
+            <section id="seciton-bank-vault">
+                <h3>Bank Vault</h3>
+                <p><strong>Games Played:</strong> <span id="vault-gamecount"></span></p>
+                <p><strong>Games Won:</strong> <span id="vault-min"></span></p>
+                <p><strong>Games Lost:</strong> <span id="vault-max"></span></p>
+                <button id="button-vault" class="btn">Visit Bank Vault Game</button>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="flex" id="footer">
+            <a href="/privacy.html">Hampstar Studios</a>
+            <time datetime="2026-09-22">2026-09-22</time>
+            <a href="/index.html">GitHub Source</a>
+        </footer>
+
+    </div><!-- /.container -->
+
+    <!-- ============================================================
+         SCRIPTS  (placed before </body> for performance)
+         ============================================================ -->
+    <script type="text/javascript" async src="/js/profile.js"></script>
+</body>
+
+</html>
