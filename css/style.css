@@ -94,10 +94,6 @@ section h3 {
 }
 
 /* ----- Ability Set and Colour  ----- */
-.ability {
-    height: 10vw; 
-    width: 10vw;
-}
 
 .profile-ability {
     height: 50vw; 
@@ -106,28 +102,28 @@ section h3 {
 
 .fire {
     background-image:url('/img/Fire.png');
-    background-size: cover;
+    background-size: 100% 100%;;
 }
 
 .water {
     background-image:url('/img/Water.png');
-    background-size: cover;
+    background-size: 100% 100%;
 }
 
 .lightning{
     background-image:url('/img/Lightning.png');
-    background-size: cover;
+    background-size: 100% 100%;
 }
 
 .nature{
     background-image:url('/img/Nature.png');
-    background-size: cover;
+    background-size: 100% 100%;
 }
 
 /* ----- Magic numbers formatting ----- */
 
 .magicnumber-input {
-    font-size: 10rem;
+    font-size: 8rem;
     background-color: #333333;
     color: #e0e0e0;
     border: 1px solid #555555;
@@ -225,6 +221,45 @@ input[type="number"] {
     font-family: monospace;
     white-space: pre-wrap;
     min-height: 4rem;
+}
+
+.output-panel {
+    display: grid; 
+    grid-template-columns: 20vw 40vw 20vw;
+    justify-content: space-evenly;
+    gap: 1rem;
+}
+
+.btn-panel {
+    display: grid;
+    grid-template-columns: 20vw 40vw 20vw;
+    grid-template-rows: 10vh 10vh;
+    justify-content: space-evenly;
+    gap: 1vw;
+    padding-bottom: 8vh;
+    font-size: 3vw;
+}
+
+.up, .down, .hint {
+    height: auto;
+    width: auto;
+    min-height: 8vh;
+}
+
+.ability {
+    justify-self: center;
+    min-height: 8vh;
+    background-size: 100% 100%;
+    height: 10vh;
+    width: 10vw;
+}
+
+.submit {
+    grid-column: span 3;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    height: auto;
+    min-height: 8vh;
 }
 
 /* ----- Footer ----- */

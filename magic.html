@@ -43,12 +43,23 @@
                 <h2>Magic Number</h2>
                 <p>The magic number is somewhere between 1 and 100.<br/> Can you find out what it is?</p>
             </section>
-            <section id="section-input">
+            <section id="section-output">
                 <h3>Pick a Number</h3>
-                <label for="input-number" class="form-label">Number:</label>
-                <input class="magicnumber-input" type="number" id="input-number" name="input-number" required min="1" step="1" maxlength="3" max="100">
-                <button class="btn" id="button-submit">Submit</button>
-            <section id="seciton-magic-numbers">
+                <section id="section-input" class="output-panel">
+                    <div></div>
+                    <div>
+                        <label for="input-number" class="form-label">Number:</label>
+                        <input class="magicnumber-input" type="number" id="input-number" name="input-number" required min="1" step="1" maxlength="3" max="100"></div>
+                    <div></div>
+                </section>
+            </section> 
+            <section id="section-input" class="btn-panel">
+                <button class="btn up" id="button-up">UP</button>
+                <button class="btn hint" id="button-ability">ABILITY</button>
+                <button class="btn down" id="button-down">DOWN</button>
+                <button class="btn submit" id="button-submit">Submit</button>
+            </section>
+            <section id="section-magic-numbers">
                 <h3>Statistics</h3>
                 <p><strong>Games Played:</strong> <span id="magic-gamecount"></span></p>
                 <p><strong>Fastest Game:</strong> <span id="magic-min"></span></p>
