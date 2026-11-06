@@ -8,6 +8,9 @@ var gameCount = parseInt(localStorage.getItem("magic-gamecount")) || 0;
 var magicMin = parseInt(localStorage.getItem("magic-min")) || null;
 var magicMax = parseInt(localStorage.getItem("magic-max")) || null;
 
+// Get the modal
+var modal = document.getElementById("outputModal");
+
 function isPrime(num) {
   // Numbers less than or equal to 1 are not prime
   if (num <= 1) return false;
@@ -35,7 +38,12 @@ function updateStats() {
 }
 
 function updateOutput(msg){
+    //document.getElementById("magic-output").innerText = msg;
+    // Get the modal
+    var modal = document.getElementById("outputModal");
     document.getElementById("magic-output").innerText = msg;
+    modal.style.display = "block";
+    console.log('[?]');
 }
 
 function applyAbilityHint() {
@@ -98,7 +106,8 @@ function checkGuess() {
     document.getElementById('guess-counter').innerText = attempts;
 
     if (guess === magicNumber) {
-        updateOutput("Congratulations, " + heroName + "!\nYou found the magic number " + magicNumber + " in " + attempts + " attempts!");
+        var modal = document.getElementById("newgameModal");
+        modal.style.display = "block";
 
         gameCount++;
         localStorage.setItem("magic-gamecount", gameCount);
@@ -115,10 +124,6 @@ function checkGuess() {
 
         updateStats();
 
-        // Reset game
-        magicNumber = Math.floor(Math.random() * 100) + 1;
-        attempts = 0;
-        inputNumber.value = "";
     } else if (guess < magicNumber) {
         document.getElementById('guess-min').innerText = guess;
         updateOutput("Too low! Try a higher number.");
@@ -166,4 +171,40 @@ if(!(heroName )){
     document.getElementById("button-submit").addEventListener("click", function () {
         checkGuess();
     });
+    document.getElementById("button-submit").addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            checkGuess();
+        }
+    });
+
+    document.getElementById("newgame-yes").addEventListener("click", function () {
+        // Reset game
+        magicNumber = Math.floor(Math.random() * 100) + 1;
+        attempts = 0;
+        inputNumber.value = "";
+        document.getElementById("newgameModal").style.display = 'none'
+    });
+
+    document.getElementById("newgame-no").addEventListener("click", function () {
+        window.location.href = 'profile.html'
+    });
+
+    // When the user clicks on <span> (x), close the modal
+    var span = document.getElementsByClassName("close")[0];
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    window.onkeydown = function(event) {
+        modal.style.display = "none";
+        if (event.key === "Enter") {
+            checkGuess();
+        }
+    }
 }

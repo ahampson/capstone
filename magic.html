@@ -56,17 +56,16 @@
                     <div>
                         <label for="input-number" class="form-label">Your Number</label>
                         <input class="magicnumber-input" type="number" id="input-number" name="input-number" required min="1" step="1" maxlength="3" max="100"></div>
-                    <div>
-                        <p id="magic-output">...</p>
-                    </div>
+                    <section id="section-input">
+                        <div class="btn-panel">
+                            <button class="btn up" id="button-up">UP</button>
+                            <button class="btn hint" id="button-ability">ABILITY</button>
+                            <button class="btn down" id="button-down">DOWN</button>
+                        </div>
+                        <button class="btn submit" id="button-submit">Submit</button>
+                    </section>
                 </div>
             </section> 
-            <section id="section-input" class="btn-panel">
-                <button class="btn up" id="button-up">UP</button>
-                <button class="btn hint" id="button-ability">ABILITY</button>
-                <button class="btn down" id="button-down">DOWN</button>
-                <button class="btn submit" id="button-submit">Submit</button>
-            </section>
             <section id="section-magic-numbers">
                 <h3>Statistics</h3>
                 <p><strong>Games Played:</strong> <span id="magic-gamecount"></span></p>
@@ -74,7 +73,24 @@
                 <p><strong>Longest Game:</strong> <span id="magic-max"></span></p>
             </section>
         </main>
-
+        <!-- The Modal -->
+        <section id="outputModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p id="magic-output">Some text in the Modal..</p>
+            </div>
+        </section>
+        <section id="newgameModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <h2>Congratulations!</h2>
+                <p>You have found the magic number!</p>
+                <p>Would you like to play again?</p>
+                <button class="btn" tabindex="1" id="newgame-yes">Yes</button>
+                <button class="btn" tabindex="1" id="newgame-no">No</button>
+            </div>
+        </section>
         <!-- Footer -->
         <footer class="flex" id="footer">
             <a href="/privacy.html">Hampstar Studios</a>
