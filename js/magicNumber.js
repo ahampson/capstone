@@ -1,18 +1,51 @@
 var heroName = localStorage.getItem("name");
 var ability = localStorage.getItem("ability");
 var personality = localStorage.getItem("personality");
+var gameCount = localStorage.getItem("magic-gamecount");
+var ability_count = 5;
+var attempts = 1;
+var gameCount = parseInt(localStorage.getItem("magic-gamecount")) || 0;
+var magicMin = parseInt(localStorage.getItem("magic-min")) || null;
+var magicMax = parseInt(localStorage.getItem("magic-max")) || null;
+
+function isPrime(num) {
+  // Numbers less than or equal to 1 are not prime
+  if (num <= 1) return false;
+  
+  // 2 is the only even prime number
+  if (num === 2) return true;
+  
+  // Exclude all other even numbers
+  if (num % 2 === 0) return false;
+
+  // Check odd factors up to the square root of the number
+  const limit = Math.sqrt(num);
+  for (let i = 3; i <= limit; i += 2) {
+    if (num % i === 0) return false;
+  }
+
+  return true;
+}
 
 function updateStats() {
+    document.getElementById("game-counter").innerText = gameCount + 1;
     document.getElementById("magic-gamecount").innerText = gameCount;
     document.getElementById("magic-min").innerText = magicMin !== null ? magicMin : "-";
     document.getElementById("magic-max").innerText = magicMax !== null ? magicMax : "-";
+}
+
+function updateOutput(msg){
+    document.getElementById("magic-output").innerText = msg;
 }
 
 function applyAbilityHint() {
     var inputNumber = document.getElementById("input-number");
     var currentValue = parseInt(inputNumber.value) || 50;
 
-    if (ability === "Fire") {
+    if(ability_count < 1){
+        alert("Your tried to activate your ability but nothing happens...");
+        document.getElementById('button-ability').disabled = true;
+    }else if (ability === "Fire") {
         // Fire: reveal if within 10
         if (Math.abs(currentValue - magicNumber) <= 10) {
             alert("Your fire sense tingles! You're getting warm... very close!");
@@ -21,13 +54,17 @@ function applyAbilityHint() {
         }
     } else if (ability === "Water") {
         // Water: reveal if higher or lower
-        if (currentValue < magicNumber) {
-            alert("The current flows upward... go higher!");
-        } else if (currentValue > magicNumber) {
-            alert("The tide pulls back... go lower!");
+        if (magicNumber % 2 === 0) {
+            msg = "The current flows evenly ";
         } else {
-            alert("The water is perfectly still. You found it!");
+            msg = "The current has an odd flow to it ";
         }
+        if(magicNumber % 3 === 0){
+            msg += "and can be divided into three rivers." 
+        }else if(isPrime(magicNumber)){
+            msg += "and is in its prime!" 
+        }
+        alert(msg)
     } else if (ability === "Lightning") {
         // Lightning: reveal a random number close to the magic number
         var hint = magicNumber + Math.floor(Math.random() * 11) - 5;
@@ -45,6 +82,7 @@ function applyAbilityHint() {
             alert("The canopy touches the sky... the number is between 76 and 100.");
         }
     }
+    ability_count -= 1
 }
 
 function checkGuess() {
@@ -52,14 +90,15 @@ function checkGuess() {
     var guess = parseInt(inputNumber.value);
 
     if (isNaN(guess) || guess < 1 || guess > 100) {
-        alert("Please enter a valid number between 1 and 100.");
+        updateOutput("Please enter a valid number between 1 and 100.");
         return;
     }
 
     attempts++;
+    document.getElementById('guess-counter').innerText = attempts;
 
     if (guess === magicNumber) {
-        alert("Congratulations, " + heroName + "! You found the magic number " + magicNumber + " in " + attempts + " attempts!");
+        updateOutput("Congratulations, " + heroName + "!\nYou found the magic number " + magicNumber + " in " + attempts + " attempts!");
 
         gameCount++;
         localStorage.setItem("magic-gamecount", gameCount);
@@ -81,9 +120,11 @@ function checkGuess() {
         attempts = 0;
         inputNumber.value = "";
     } else if (guess < magicNumber) {
-        alert("Too low! Try a higher number.");
+        document.getElementById('guess-min').innerText = guess;
+        updateOutput("Too low! Try a higher number.");
     } else {
-        alert("Too high! Try a lower number.");
+        document.getElementById('guess-max').innerText = guess;
+        updateOutput("Too high! Try a lower number.");
     }
 }
 
@@ -93,9 +134,10 @@ if(!(heroName )){
 }else{
     var magicNumber = Math.floor(Math.random() * 100) + 1;
     var attempts = 0;
-    var gameCount = parseInt(localStorage.getItem("magic-gamecount")) || 0;
-    var magicMin = parseInt(localStorage.getItem("magic-min")) || null;
-    var magicMax = parseInt(localStorage.getItem("magic-max")) || null;
+
+    document.getElementById('magic-gamecount').innerText = gameCount || 0;
+    document.getElementById('magic-min').innerText = magicMin;
+    document.getElementById('magic-max').innerText = magicMax;
 
     document.getElementById("button-up").addEventListener("click", function () {
         var inputNumber = document.getElementById("input-number");

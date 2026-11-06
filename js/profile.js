@@ -1,6 +1,9 @@
 var heroName = localStorage.getItem("name");
 var ability = localStorage.getItem("ability");
 var personality = localStorage.getItem("personality");
+var magicgameCount = localStorage.getItem("magic-gamecount");
+var magic_min = localStorage.getItem("magic-min");
+var magic_max = localStorage.getItem("magic-max");
 
 var profiles = {
     "Fire": {
@@ -44,6 +47,10 @@ if(!(heroName )){
     document.getElementById("hero-ability").innerText = ability;
     document.getElementById("hero-bio").innerText = profiles[ability][personality];
     document.getElementById("hero-personality").innerText = personality;
+
+    document.getElementById("magic-gamecount").innerText = magicgameCount;
+    document.getElementById("magic-min").innerText = magic_min;
+    document.getElementById("magic-max").innerText = magic_max;
 
     document.getElementById("button-magic").addEventListener("click", function(){
         window.location.href = "magic.html";

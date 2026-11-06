@@ -45,13 +45,21 @@
             </section>
             <section id="section-output">
                 <h3>Pick a Number</h3>
-                <section id="section-input" class="output-panel">
-                    <div></div>
+                <div id="section-input" class="output-panel">
+                    <div class="col-2">
+                        <h4>Round:</h4>
+                        <h4 id="game-counter">1</h4>  
+                        <strong>Guess:</strong><em id="guess-counter">0</em>
+                        <strong>Min:</strong><em id="guess-min">1</em>
+                        <strong>Max:</strong><em id="guess-max">100</em>
+                    </div>
                     <div>
-                        <label for="input-number" class="form-label">Number:</label>
+                        <label for="input-number" class="form-label">Your Number</label>
                         <input class="magicnumber-input" type="number" id="input-number" name="input-number" required min="1" step="1" maxlength="3" max="100"></div>
-                    <div></div>
-                </section>
+                    <div>
+                        <p id="magic-output">...</p>
+                    </div>
+                </div>
             </section> 
             <section id="section-input" class="btn-panel">
                 <button class="btn up" id="button-up">UP</button>
