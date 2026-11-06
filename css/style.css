@@ -72,11 +72,20 @@ input.text {
     text-transform: capitalize;
 }
 
+input.active {
+    border: 1px solid gold;
+}
+
+
 section {
     margin-bottom: 1.5rem;
     display: inline-block;
     width: 100%;
     background-color:rgba(102,102,102,0.4);
+    border: #008800 1px solid;
+    border-radius: 10px;
+    padding:0% 2% 2% 2%;
+    box-shadow: 0px 0px 10px 0px #008800;
 }
 
 section p{
@@ -93,6 +102,12 @@ section h3 {
     margin-bottom: 0.3rem;
 }
 
+label {
+    backdrop-filter: blur(10px);
+    padding: 3px;
+    display: block;
+}
+
 /* ----- Ability Set and Colour  ----- */
 
 .profile-ability {
@@ -100,24 +115,28 @@ section h3 {
     width: 50vw;
 }
 
+.fire, .water, .lightning, .nature{
+    background-size: 100% 100%;
+    height: auto;
+    min-height: 10vw;
+    width: 10vw;
+    align-content: center;
+}
+
 .fire {
     background-image:url('/img/Fire.png');
-    background-size: 100% 100%;;
 }
 
 .water {
     background-image:url('/img/Water.png');
-    background-size: 100% 100%;
 }
 
 .lightning{
     background-image:url('/img/Lightning.png');
-    background-size: 100% 100%;
 }
 
 .nature{
     background-image:url('/img/Nature.png');
-    background-size: 100% 100%;
 }
 
 /* ----- Magic numbers formatting ----- */
@@ -145,16 +164,41 @@ input[type="number"] {
     appearance: textfield;
 }
 
+input[type="radio"] {
+    display: none;
+}
+
+input[type="text"] {
+    width: 100%;
+    max-width: 60vw;
+}
+
 /* ----- -- ----- */
+
+div.active {
+    border: 5px solid gold;
+}
 
 .grid{
     display: grid;
+}
+
+.col-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    text-align: right;
+    gap: 0.25rem;
+    text-shadow: goldenrod 1px 1px 1px;
+    font-size: 1.2rem;
+    padding: 2vh 2vw 2vh 2vw;
 }
 
 .flex {
     display: flex;
     width: 100%;
     flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-around;
 }
 
@@ -204,12 +248,19 @@ input[type="number"] {
     font-size: 1rem;
     text-decoration: none;
     transition: background-color 0.2s ease;
-    width: 100%; 
-    margin-top: 5vh;
+    width: 100%;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    margin-top: 1vh;
 }
 
 .btn:hover {
     background-color: #008800;
+}
+
+.btn:disabled {
+    background-color: gray;
+    border: 2px solid red;
 }
 
 /* ----- Output / Status ----- */
@@ -231,13 +282,15 @@ input[type="number"] {
 }
 
 .btn-panel {
-    display: grid;
-    grid-template-columns: 20vw 40vw 20vw;
-    grid-template-rows: 10vh 10vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: space-evenly;
-    gap: 1vw;
-    padding-bottom: 8vh;
-    font-size: 3vw;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 5vh;
+    border-radius: 10px;
 }
 
 .up, .down, .hint {
@@ -250,8 +303,9 @@ input[type="number"] {
     justify-self: center;
     min-height: 8vh;
     background-size: 100% 100%;
-    height: 10vh;
+    height: 10vw;
     width: 10vw;
+    min-width: 50px;
 }
 
 .submit {
@@ -262,6 +316,51 @@ input[type="number"] {
     min-height: 8vh;
 }
 
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  transition: all 0.25s ease;
+  backdrop-filter: blur(2px);
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  color: #000;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  text-shadow: goldenrod 1px 1px 1px;
+  font-size: 1.2rem;
+  top: 25vh;
+  position: relative;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 2.8rem;
+  font-weight: bold;
+}
+
+.close:hover, .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 /* ----- Footer ----- */
 footer {
     border-top: 2px solid #333333;
@@ -270,7 +369,11 @@ footer {
     font-size: 0.8rem;
     text-align: center;
 }
-@media all and (min-width: 600px){}
+@media all and (min-width: 600px){
+    .flex {
+        flex-direction: row;
+    }
+}
 
 @media all and (min-width: 800px){}
 
