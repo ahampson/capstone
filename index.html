@@ -8,17 +8,17 @@
     <!-- ============================================================
          META / DOCUMENT HEAD
          ============================================================ -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="HomePage for the Portfolio Project" />
-    <meta name="author" content="Hampstar Studios" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HomePage for the Portfolio Project">
+    <meta name="author" content="Hampstar Studios">
 
     <title>The Fall of the Verdant King</title>
 
     <!-- ============================================================
          STYLES
          ============================================================ -->
-    <link rel="stylesheet" href="/css/style.css"></link>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -35,6 +35,7 @@
         <!-- Main Content -->
         <main id="main">
             <section id="section-about">
+                <h2>Adventure Begins</h2>
                 <p>The world once celebrated a hero known as the Verdant King, a guardian blessed with the power of nature. He healed the land, protected kingdoms, and brought life wherever he walked. But when a great plague swept across the world, he failed to save those he loved most.</p>
                 <p>Consumed by grief, the Verdant King turned to an ancient relic hidden beneath the World Tree. The relic promised a world without suffering, death, or loss. Desperate to undo his tragedy, he embraced its power.</p>
                 <p>Instead, it corrupted him.</p>
@@ -53,28 +54,28 @@
             <section id="section-job" class="grid">
                 <h3>Hero Ability</h3>
                 <form name="form-ability" action="/profile.html" method="get" class="flex">
-                    <div id="ability-fire" class="text-centre grid">
+                    <div id="ability-fire" class="text-centre grid" tabindex="0">
                         <img class="ability" alt="Fire Emblem" src="/img/Fire.png">
                         <input type="radio" id="fire" name="ability" value="Fire">
                         <label for="fire">Fire</label>
                     </div>
-                    <div id="ability-water" class="text-centre grid">
+                    <div id="ability-water" class="text-centre grid" tabindex="0">
                         <img class="ability" alt="Water Emblem" src="/img/Water.png">
-                        <input type="radio" id="water" name="ability" value="Water">
+                        <input type="radio" id="water" name="ability" value="Water" tabindex="1">
                         <label for="water">Water</label>
                     </div>
-                    <div id="ability-lightning" class="text-centre grid">
+                    <div id="ability-lightning" class="text-centre grid" tabindex="0">
                         <img class="ability" alt="Lightning Emblem" src="/img/Lightning.png">
-                        <input type="radio" id="lightning" name="ability" value="Lightning">
+                        <input type="radio" id="lightning" name="ability" value="Lightning" tabindex="1">
                         <label for="lightning">Lightning</label>
                     </div>
-                    <div id="ability-nature" class="text-centre grid">
+                    <div id="ability-nature" class="text-centre grid" tabindex="0">
                         <img class="ability" alt="Nature Emblem" src="/img/Nature.png">
-                        <input type="radio" id="nature" name="ability" value="Nature">
+                        <input type="radio" id="nature" name="ability" value="Nature" tabindex="1">
                         <label for="nature">Nature</label>
                     </div>                    
                 </form>
-                <button type="submit" class="btn" style="width: 100%; margin-top: 5vh;" id="btn-create" type="button">Create Hero</button>
+                <button type="submit" class="btn" style="width: 100%; margin-top: 5vh;" id="btn-create">Create Hero</button>
             </section>
         </main>
 
@@ -90,7 +91,7 @@
     <!-- ============================================================
          SCRIPTS  (placed before </body> for performance)
          ============================================================ -->
-    <script type="text/javascript" async src="/js/homepage.js"></script>
+    <script async src="/js/homepage.js"></script>
 </body>
 
 </html>

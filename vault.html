@@ -13,7 +13,7 @@
     <meta name="description" content="Inofmration about this website and waht is being used to make it happen" />
     <meta name="author" content="Hampstar Studios" />
 
-    <title>Hampstar Studios</title>
+    <title>Bank Vault</title>
 
     <!-- ============================================================
          STYLES
@@ -39,12 +39,91 @@
         </header>
         <!-- Main Content -->
         <main id="main">
-            <section id="seciton-Hero">
-                <h2>Hampstar Studios</h2>
-                <p>All about this game developer</p>
+            <section id="seciton-about">
+                <h2>Bank Vault</h2>
+                <p>Can you solve the Lock Combination?</p>
+                <artilce id="hint">
+                    <h3>Hints</h3>
+                    <p>The first number is: <span id="hint-1">ODD|EVEN</span>[</p>
+                    <p>The second number is double the first number</p>
+                    <p>The third number plus the first number is:<span id="hint-2">A+(B/2)</span></p>
+                    <p>The Sum of all number is <span id="hint-3"></span>[TOTAL]</p>
+                    <button class="btn hint" id="button-ability">ABILITY</button>
+                </artilce>
+            </section>
+            <section id="section-output">
+                <h3>Vault Combo</h3>
+                <div>
+                    <label for="input-numbe1r" class="form-label">Number 1</label>
+                    <div class="btn-panel">
+                        <button class="btn up" id="button-up">UP</button>
+                        <input class="vaultnumber-input" type="number" id="input-number1" name="input-number1" required min="1" step="1" max="100">
+                        <button class="btn down" id="button-down">DOWN</button>
+                    </div>
+                </div>
+                <div>
+                    <label for="input-number2" class="form-label">Number 2</label>
+                    <div class="btn-panel">
+                        <button class="btn up" id="button-up">UP</button>
+                        <input class="vaultnumber-input" type="number" id="input-number2" name="input-number2" required min="1" step="1" max="100">
+                        <button class="btn down" id="button-down">DOWN</button>
+                    </div>
+                </div>
+                <div>
+                    <label for="input-number3" class="form-label">Number 3</label>
+                    <div class="btn-panel">
+                        <button class="btn up" id="button-up">UP</button>
+                        <input class="vaultnumber-input" type="number" id="input-number3" name="input-number3" required min="1" step="1" max="100">
+                        <button class="btn down" id="button-down">DOWN</button>
+                    </div>
+                </div>
+                <button class="btn submit" id="button-submit">Submit</button>
+                <section id="section-info">
+                    <h3>Game Info</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>Game #</th>
+                                <th>Guess #</th>
+                                <th>Min</th>
+                                <th>Max</th>
+                            </tr>
+                            <tr>
+                                <td id="game-counter">1</td>
+                                <td id="guess-counter">0</td>
+                                <td id="guess-min">1</td>
+                                <td id="guess-max">100</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </section> 
+            <section id="section-vault-numbers">
+                <h3>Statistics</h3>
+                <p><strong>Games Played:</strong> <span id="vault-gamecount"></span></p>
+                <p><strong>Fastest Game:</strong> <span id="vault-min">?</span></p>
+                <p><strong>Longest Game:</strong> <span id="vault-max">?</span></p>
             </section>
         </main>
-
+        <!-- The Modal -->
+        <section id="outputModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <h2>Game Over</h2>
+                <span class="close">&times;</span>
+                <p id="magic-output">Some text in the Modal..</p>
+            </div>
+        </section>
+        <section id="newgameModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <h2>Congratulations!</h2>
+                <p>You have unlocked the Vault!</p>
+                <p>Would you like to play again?</p>
+                <button class="btn" tabindex="1" id="newgame-yes">Yes</button>
+                <button class="btn" tabindex="1" id="newgame-no">No</button>
+            </div>
+        </section>
         <!-- Footer -->
         <footer class="flex" id="footer">
             <a href="/privacy.html">Hampstar Studios</a>
@@ -55,9 +134,9 @@
     </div><!-- /.container -->
 
     <!-- ============================================================
-         SCRIPTS  (placed before </body> for performance)
+         SCRIPTS 
          ============================================================ -->
-    <script type="text/javascript" async src=""></script>
+    <script async src="js/vault.js"></script>
 </body>
 
 </html>

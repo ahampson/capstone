@@ -53,6 +53,13 @@ abilities.forEach(function(ability){
         document.getElementById(ability.toLowerCase()).checked = true;
         setActive(ability.toLowerCase());
     });
+    document.getElementById("ability-"+ability.toLowerCase()).addEventListener("keydown", function(e){
+        console.log(e.code);
+        if(e.code === 'Enter' || e.code === 'Space'){
+            document.getElementById(ability.toLowerCase()).checked = true;
+            setActive(ability.toLowerCase());
+        }
+    });
 });
 
 

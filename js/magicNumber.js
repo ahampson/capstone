@@ -133,6 +133,27 @@ function checkGuess() {
     }
 }
 
+function numberUP(){
+    var inputNumber = document.getElementById("input-number");
+    var currentValue = parseInt(inputNumber.value) || 0;
+    if (currentValue < 100) {
+        inputNumber.value = currentValue + 1;
+    }else if(currentValue = 100) {
+        inputNumber.value = 1;
+    }
+}
+
+function numberDOWN(){
+    var inputNumber = document.getElementById("input-number");
+        var currentValue = parseInt(inputNumber.value) || 101;
+        if (currentValue > 1) {
+            inputNumber.value = currentValue - 1;
+        }else if(currentValue = 1) {
+            inputNumber.value = 100;
+        }
+}
+
+
 if(!(heroName )){
     alert("Hero Profile is missing");
     window.location = "index.html"
@@ -145,23 +166,11 @@ if(!(heroName )){
     document.getElementById('magic-max').innerText = magicMax;
 
     document.getElementById("button-up").addEventListener("click", function () {
-        var inputNumber = document.getElementById("input-number");
-        var currentValue = parseInt(inputNumber.value) || 0;
-        if (currentValue < 100) {
-            inputNumber.value = currentValue + 1;
-        }else if(currentValue = 100) {
-            inputNumber.value = 1;
-        }
+        numberUP()
     });
 
     document.getElementById("button-down").addEventListener("click", function () {
-        var inputNumber = document.getElementById("input-number");
-        var currentValue = parseInt(inputNumber.value) || 101;
-        if (currentValue > 1) {
-            inputNumber.value = currentValue - 1;
-        }else if(currentValue = 1) {
-            inputNumber.value = 100;
-        }
+        numberDOWN()
     });
 
     document.getElementById("button-ability").addEventListener("click", function () {
@@ -172,7 +181,8 @@ if(!(heroName )){
         checkGuess();
     });
     document.getElementById("button-submit").addEventListener("keydown", function (event) {
-        if (event.key === "Enter") {
+        if (event.key === "enter") {
+            document.getElementById('input-number').focus();
             checkGuess();
         }
     });
@@ -203,8 +213,5 @@ if(!(heroName )){
     }
     window.onkeydown = function(event) {
         modal.style.display = "none";
-        if (event.key === "Enter") {
-            checkGuess();
-        }
     }
 }

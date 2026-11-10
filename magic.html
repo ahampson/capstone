@@ -9,16 +9,16 @@
          META / DOCUMENT HEAD
          ============================================================ -->
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Inofmration about this website and waht is being used to make it happen" />
-    <meta name="author" content="Hampstar Studios" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Inofmration about this website and waht is being used to make it happen">
+    <meta name="author" content="Hampstar Studios">
 
-    <title>Hampstar Studios</title>
+    <title>Magic Number</title>
 
     <!-- ============================================================
          STYLES
          ============================================================ -->
-    <link rel="stylesheet" href="/css/style.css"></link>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -45,38 +45,51 @@
             </section>
             <section id="section-output">
                 <h3>Pick a Number</h3>
-                <div id="section-input" class="output-panel">
-                    <div class="col-2">
-                        <h4>Round:</h4>
-                        <h4 id="game-counter">1</h4>  
-                        <strong>Guess:</strong><em id="guess-counter">0</em>
-                        <strong>Min:</strong><em id="guess-min">1</em>
-                        <strong>Max:</strong><em id="guess-max">100</em>
-                    </div>
-                    <div>
-                        <label for="input-number" class="form-label">Your Number</label>
-                        <input class="magicnumber-input" type="number" id="input-number" name="input-number" required min="1" step="1" maxlength="3" max="100"></div>
-                    <section id="section-input">
-                        <div class="btn-panel">
-                            <button class="btn up" id="button-up">UP</button>
-                            <button class="btn hint" id="button-ability">ABILITY</button>
-                            <button class="btn down" id="button-down">DOWN</button>
-                        </div>
-                        <button class="btn submit" id="button-submit">Submit</button>
-                    </section>
+                <div>
+                    <label for="input-number" class="form-label">Your Number</label>
+                    <input class="magicnumber-input" type="number" id="input-number" name="input-number" required min="1" step="1" max="100">
                 </div>
+                <section id="section-input-buttons">
+                    <h3>Controls</h3>
+                    <div class="btn-panel">
+                        <button class="btn up" id="button-up">UP</button>
+                        <button class="btn hint" id="button-ability">ABILITY</button>
+                        <button class="btn down" id="button-down">DOWN</button>
+                    </div>
+                    <button class="btn submit" id="button-submit">Submit</button>
+                </section>
+                <section id="section-info">
+                    <h3>Game Info</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>Game #</th>
+                                <th>Guess #</th>
+                                <th>Min</th>
+                                <th>Max</th>
+                            </tr>
+                            <tr>
+                                <td id="game-counter">1</td>
+                                <td id="guess-counter">0</td>
+                                <td id="guess-min">1</td>
+                                <td id="guess-max">100</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
             </section> 
             <section id="section-magic-numbers">
                 <h3>Statistics</h3>
                 <p><strong>Games Played:</strong> <span id="magic-gamecount"></span></p>
-                <p><strong>Fastest Game:</strong> <span id="magic-min"></span></p>
-                <p><strong>Longest Game:</strong> <span id="magic-max"></span></p>
+                <p><strong>Fastest Game:</strong> <span id="magic-min">?</span></p>
+                <p><strong>Longest Game:</strong> <span id="magic-max">?</span></p>
             </section>
         </main>
         <!-- The Modal -->
         <section id="outputModal" class="modal">
             <!-- Modal content -->
             <div class="modal-content">
+                <h2>Game Over</h2>
                 <span class="close">&times;</span>
                 <p id="magic-output">Some text in the Modal..</p>
             </div>
@@ -103,7 +116,7 @@
     <!-- ============================================================
          SCRIPTS 
          ============================================================ -->
-    <script type="text/javascript" async src="js/magicNumber.js"></script>
+    <script async src="js/magicNumber.js"></script>
 </body>
 
 </html>
